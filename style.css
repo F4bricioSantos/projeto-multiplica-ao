@@ -84,22 +84,26 @@ p{
 
 .pprincipal{
     font-size: 20px;
-    font-weight:  bolder;
+    font-weight:  500;
     margin-left: 20px;
     margin-right:20px;
     margin-top: 10%;
     margin-bottom: 15%;
     text-align: justify;
+    padding: 10px;
+
 }
 
 .titulo{
    font-size: 30px; 
-   font-weight: bold;
    color: white;
    border-radius: 2px;
-   margin-right: 86px;
+   text-align: center;
+   font-weight: bold;
    margin-top: 7px;
-   margin-left: 141px;
+   margin-left: 0;
+   margin-right: 0;
+
 }
 
 button{
@@ -161,7 +165,7 @@ a{
     width: 32px;
     height: 32px;
     border-radius: 100%;
-    margin-left: 90%;
+    margin-left: 85%;
     margin-right: 0px;
     margin-top: -10px;
 }
@@ -195,16 +199,12 @@ a{
     
     .titulo{
         font-size: 24px;
-        margin-left: 34%; 
         margin-bottom: 5rem; 
     }
     
     .pprincipal{
         margin-top: 4%;
-        padding: 10px;
         font-size: 17px;
-        margin-left: 3px;
-        margin-right: 13px;
     }
     
     button{
@@ -251,6 +251,5 @@ a{
 
     #reiniciar{
         margin-top: 0.1rem;
-        margin-left: 86%;
     }
 }
