@@ -1,255 +1,245 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-*{
+* {
     padding: 0;
     margin: 0;
     border: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(https://img.freepik.com/fotos-gratis/fundo-de-concreto-pintado_53876-92961.jpg?t=st=1732634785~exp=1732638385~hmac=79c7236e4d256675733cd5504c151c291044215e2028048a910f8527dd71bd74&w=1380);
     background-color: black;
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-.container{
-    height: 100%;
-    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
 }
-.quadrado{
-    border: 2px solid red;
-    width: 450px;
-    height:  375px;
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadrado {
+    border: 2px solid #ff1919;
+    max-width: 380px;
+    width: 80%;
+    height: auto;
     border-radius: 7%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 0px;
+
+}
+.topo{
+    display: flex;
+    align-items: center;
 }
 
-p{
-   font-size: 30px; 
-   font-family: 'Times New Roman', Times, serif;
-   color: white;
-   border-radius: 2px;
-   margin-right: 86px;
-   margin-top: -34px;
-   margin-bottom: 15%;
-   margin-left: 141px;
+p {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    margin: auto;
+    text-align: center;
 }
 
-.contas{
+.topo p{
+    margin-left: 15%;
+}
+.contas {
     font-size: 20px;
     font-weight: bold;
     background-color: white;
     color: black;
-    display: flex; 
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 121px;
     height: 50px;
-    margin-left: 143px;
-    margin-right: 157px;
-    margin-bottom: 47px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    text-align: center;
 }
-
 .bot {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
-
- .respBotao {
-    padding: 10px 20px;
-    height: 65px;
-    margin: 10px 10px;
-    cursor: pointer;
-    font-size: 16px;
+.bot div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
- .operaçoes{
-    justify-content: center;
-    background-color: blue;
-    height: 50px;
-    width: 100px;
-    margin-top: 92px;
-    margin-left: 172px;
-    margin-right: 180px;
- }
 
-.pprincipal{
+.operacoes {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 11px;
+}
+
+.pprincipal {
     font-size: 20px;
-    font-weight:  500;
-    margin-left: 20px;
-    margin-right:20px;
-    margin-top: 10%;
-    margin-bottom: 15%;
+    font-weight: 500;
+    margin-bottom: 12px;
     text-align: justify;
     padding: 10px;
-
 }
 
-.titulo{
-   font-size: 30px; 
-   color: white;
-   border-radius: 2px;
-   text-align: center;
-   font-weight: bold;
-   margin-top: 7px;
-   margin-left: 0;
-   margin-right: 0;
-
+.titulo {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 18px;
+}
+.botoes-iniciais{
+    display: flex;
+    justify-content: space-around;
 }
 
-button{
-    background-image: linear-gradient(40deg, #333, #ff1919);    
+button {
+    background-image: linear-gradient(40deg, #333, #ff1919);
     margin: 10px 19px;
     padding: 10px;
     font-size: 16px;
     width: 120px;
-    height: 70px; 
+    height: 70px;
     font-weight: bold;
     border-radius: 7px;
     color: white;
     cursor: pointer;
     border: none;
 }
+.botao{
+    margin: 0;
+}
 
+.respBotao {
+    padding: 10px 20px;
+    height: 65px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 68%;
+    max-width: 141px;
+}
 .nome {
     color: white;
     font-size: 15px;
-    position: relative;
-    bottom: 0;
-    right: 0;
     padding: 10px;
     cursor: wait;
 }
 
-
-
-a{
+a {
     text-decoration: none;
     color: red;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-#voltar{
+#voltar {
     background-image: url('icons/de-volta.png');
     display: flex;
     width: 32px;
     height: 32px;
-    border-radius: 100%;
-    margin-left: 9px;
-    margin-top: 7px;
-    margin-bottom: -17px;
+    border-radius: 50%;
+    margin-left: -16px;
+    margin-top: -14px;
 }
 
-#pontuacao{
+.div-reiniciar{
+    height: 36px;
+    width: 105%;
+    max-width: 369px;
     display: flex;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 311px;
-    margin-right: 39px;
-    margin-bottom: 0px;
-    margin-top: 1rem;    
+    justify-content: end;
 }
-
-#reiniciar{
-    background:url(icons/atualizar\(1\).png);
+span{
+    display: flex;
+    width: 80%;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+#reiniciar {
+    background: url(icons/atualizar\(1\).png);
     display: flex;
     width: 32px;
     height: 32px;
-    border-radius: 100%;
-    margin-left: 85%;
-    margin-right: 0px;
-    margin-top: -10px;
+    border-radius: 50%;
+    margin: 0px;
 }
 
-#correto{
+#correto {
     display: flex;
     font-weight: bold;
     font-size: 16px;
-    margin-top: -19px;
-    margin-bottom: -22px;
-    margin-left: 22px;
+    color: #fff;
+    border-radius: 10px;
+    height: 26px;
+    width: 144px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+#pontuacao{
+    margin: 0;
 }
 
 #contador {
     font-size: 24px;
     color: #333;
     background-color: beige;
-  }
+}
 
-@media screen and (max-width: 600px) and (min-width: 320px){
-    html,body{
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .quadrado {
-        width: 80%;
-    }
-    
-    .titulo{
+@media screen and (max-width: 600px) {
+    .titulo {
         font-size: 24px;
-        margin-bottom: 5rem; 
     }
-    
-    .pprincipal{
-        margin-top: 4%;
-        font-size: 17px;
-    }
-    
-    button{
+
+
+    button {
         width: 90px;
         height: 60px;
-        margin-left: 15px;
-        margin-right: 15px;
         font-size: 15px;
     }
 
-    .nome{
-        font-size: 13px;       
+    .nome {
+        font-size: 13px;
     }
 
-    p{
-        margin-left: 30%;
-        margin-bottom: 11%;
+    p {
+        font-size: 22px;
     }
 
-    .contas{
-        margin: auto;
-
+    .contas {
+        height: 50px;
     }
+
     .bot {
         margin-top: 15%;
-        margin-bottom: 20px;
     }
 
-    .respBotao{
+    .respBotao {
         width: 100px;
         height: 60px;
         margin: 10px 10px;
         font-size: 15px;
     }
 
-    #pontuacao{
-        margin-left: 70%;
-        margin-right: auto;
-    }
-
-    #correto{
-        margin-right: 167px;
-    }
-
-    #reiniciar{
-        margin-top: 0.1rem;
-    }
 }
