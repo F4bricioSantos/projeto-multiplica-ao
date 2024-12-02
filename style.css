@@ -1,4 +1,6 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
     padding: 0;
     margin: 0;
     border: 0;
@@ -26,6 +28,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.timer-container {
+    width: 72%;
+    max-width: 358px;
+display: flex;
+color: #fff;
+justify-content: end;
+align-items: center;
+}
+
+#timer {
+font-size: 24px;
+font-weight: bold;
+margin-left: 4px;
 }
 
 .quadrado {
@@ -170,9 +186,10 @@ a {
     display: flex;
     justify-content: end;
 }
-span{
+.mostrador{
     display: flex;
     width: 80%;
+    max-width: 433px;
     margin-top: 10px;
     justify-content: space-around;
 }
@@ -192,13 +209,16 @@ span{
     color: #fff;
     border-radius: 10px;
     height: 26px;
-    width: 144px;
+    width: auto;
+    padding: 17px 5px;
     align-items: center;
     justify-content: center;
     margin: 0;
 }
 #pontuacao{
     margin: 0;
+    font-size: 18px;
+    margin-top: 7px;
 }
 
 #contador {

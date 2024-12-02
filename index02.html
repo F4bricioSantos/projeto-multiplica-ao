@@ -10,27 +10,34 @@
 </head>
 <body>
     <div class="container">
-    <div class="quadrado" >
-        <div class="topo">
-        <button id="voltar"></button>
-        <p>Mutiplicaçao</p>
-    </div>
-        <div class="operacoes"> <p class="contas" id="contas"></p></div>
-        <div class="bot">
-            <div>
-                <button class="respBotao" id="button1"></button>
-                <button class="respBotao" id="button2"></button>
+        <div class="timer-container">
+            <img id="playPause" src="icons/botao-play.png" alt="Iniciar" width="26" height="26">
+            <span id="timer">20</span>s
+        </div>        
+        <div class="quadrado">
+            <div class="topo">
+                <button id="voltar"></button>
+                <p>Multiplicação</p>
             </div>
-            <div>
-                <button class="respBotao" id="button3"></button>
-                <button class="respBotao" id="button4"></button>
+            <div class="operacoes">
+                <p class="contas" id="contas"></p>
+            </div>
+            <div class="bot">
+                <div>
+                    <button class="respBotao" id="button1"></button>
+                    <button class="respBotao" id="button2"></button>
+                </div>
+                <div>
+                    <button class="respBotao" id="button3"></button>
+                    <button class="respBotao" id="button4"></button>
+                </div>
+            </div>
+            <div class="div-reiniciar">
+                <button id="reiniciar"></button>
             </div>
         </div>
-        <div class="div-reiniciar">
-            <button id="reiniciar"></button> 
-        </div> 
-    </div> 
-    <span>           
+        
+    <span class="mostrador">           
         <p id="correto"></p>    
         <p id="pontuacao"></p>
     </span>
