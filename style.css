@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url(https://img.freepik.com/fotos-gratis/fundo-de-concreto-pintado_53876-92961.jpg?t=st=1732634785~exp=1732638385~hmac=79c7236e4d256675733cd5504c151c291044215e2028048a910f8527dd71bd74&w=1380);
+    background-image: url(fundo.jpg);
     background-color: black;
     background-size: cover;
     background-position: center;
