@@ -2,18 +2,19 @@ const urlParams = new URLSearchParams(window.location.search);
 const option = urlParams.get('option');
 const audioAcerto = document.getElementById("audioAcerto");
 const audioErro = document.getElementById("audioErro");
-const timerElement = document.getElementById("timer");
+const timerElement = document.getElementById("temporizador");
 const playPauseButton = document.getElementById("playPause");
 const audioFinal = new Audio("sons/success-48018.mp3");
 
-let timerInterval;
-let isPlaying = false;
-let pontuacao = 0;
-let respostaCorreta = 0;
 let tempoTotal = option === '1' ? 20 : 40;
-let timeLeft = tempoTotal; // Variável para controlar o tempo restante
+let timeLeft = tempoTotal;
+let pontuacao = 0;
+let erros = []; // Array para armazenar os erros
+let respostaCorreta;
+let isPlaying = false;
+let timerInterval;
 
-// Função para gerar números aleatórios
+// Função para gerar números aleatórios em um intervalo
 function randomNumberInterval(a, b) {
     return Math.floor(Math.random() * (b - a + 1)) + a;
 }
@@ -30,11 +31,9 @@ function embaralharArray(array) {
 function iniciarJogo(multiplicadores) {
     let numeros = Array.from({ length: multiplicadores }, () => randomNumberInterval(1, 10));
     respostaCorreta = numeros.reduce((acc, n) => acc * n, 1);
-
     let erro1 = respostaCorreta + randomNumberInterval(1, 5);
     let erro2 = respostaCorreta + randomNumberInterval(-5, -1);
     let erro3 = respostaCorreta + randomNumberInterval(5, 10);
-
     const opcoes = [respostaCorreta, erro1, erro2, erro3];
     embaralharArray(opcoes);
 
@@ -53,7 +52,6 @@ function iniciarJogo(multiplicadores) {
 // Função para verificar a resposta do jogador
 function verificarResposta(event) {
     let numeroBotao = parseInt(event.target.textContent);
-
     audioAcerto.pause();
     audioErro.pause();
     audioAcerto.currentTime = 0;
@@ -63,12 +61,9 @@ function verificarResposta(event) {
         audioAcerto.play();
         pontuacao++;
         document.getElementById('pontuacao').textContent = "Pontuação: " + pontuacao;
-        document.getElementById('correto').textContent = '';
-        document.getElementById('correto').style.backgroundColor = '';
     } else {
         audioErro.play();
-        document.getElementById('correto').textContent = 'Resposta certa: ' + respostaCorreta;
-        document.getElementById('correto').style.backgroundColor = '#ff1919';
+        erros.push(numeroBotao); // Armazena o erro
     }
 
     iniciarJogo(option === '1' ? 2 : 3);
@@ -81,13 +76,12 @@ function iniciarTimer() {
     resetarJogo();
     isPlaying = true;
     playPauseButton.src = "icons/botao-de-pausa.png";
-    timeLeft = tempoTotal; // Reseta o tempo
+    timeLeft = tempoTotal;
     timerElement.textContent = timeLeft;
 
     timerInterval = setInterval(() => {
         timeLeft--;
         timerElement.textContent = timeLeft;
-
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             finalizarJogo();
@@ -95,9 +89,10 @@ function iniciarTimer() {
     }, 1000);
 }
 
-// Função para resetar o jogo e a pontuação
+// Função para reiniciar o jogo e a pontuação
 function resetarJogo() {
     pontuacao = 0;
+    erros = []; // Reseta os erros
     document.getElementById("pontuacao").textContent = "Pontuação: " + pontuacao;
     iniciarJogo(option === '1' ? 2 : 3);
 }
@@ -106,19 +101,19 @@ function resetarJogo() {
 function finalizarJogo() {
     clearInterval(timerInterval);
     audioFinal.play();
-    alert("Tempo esgotado! Você acertou " + pontuacao + " perguntas.");
+    alert(`Tempo esgotado! Você acertou ${pontuacao} perguntas.\nErros: ${erros.join(", ")}`);
     isPlaying = false;
     playPauseButton.src = "icons/botao-play.png";
-    timeLeft = tempoTotal; // Reseta o tempo ao final
+    timeLeft = tempoTotal;
     timerElement.textContent = timeLeft;
 }
 
-// Evento para iniciar ou finalizar o jogo ao clicar no botão de play/pause
+// Evento para iniciar ou encerrar o jogo ao clicar no botão de play/pause
 playPauseButton.addEventListener("click", function () {
     if (isPlaying) {
-        finalizarJogo(); // Finaliza o jogo ao pausar
+        finalizarJogo();
     } else {
-        iniciarTimer(); // Inicia o jogo
+        iniciarTimer();
     }
 });
 
