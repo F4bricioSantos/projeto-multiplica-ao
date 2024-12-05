@@ -140,12 +140,11 @@ document.getElementById("voltar").addEventListener("click", function () {
 // Inicializa o jogo com base no nível
 if (option === '1') {
     tempoTotal = 20; // Define o tempo total para a opção 1
-    timeLeft = tempoTotal; // Atualiza o tempo restante
-    timerElement.textContent = timeLeft; // Atualiza o timer na interface
-    iniciarJogo(2);
 } else if (option === '2') {
     tempoTotal = 40; // Define o tempo total para a opção 2
-    timeLeft = tempoTotal; // Atualiza o tempo restante
-    timerElement.textContent = timeLeft; // Atualiza o timer na interface
-    iniciarJogo(3);
 }
+
+// Atualiza o timer antes de iniciar o jogo
+timeLeft = tempoTotal; // Atualiza o tempo restante
+timerElement.textContent = timeLeft; // Exibe o tempo no elemento
+iniciarJogo(option === '1' ? 2 : 3);
