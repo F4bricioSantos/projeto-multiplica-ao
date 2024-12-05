@@ -68,7 +68,7 @@ function verificarResposta(event) {
         document.getElementById('correto').style.backgroundColor = '';
     } else {
         audioErro.play();
-        erros++; // Incrementa os erros somente quando está jogando
+        erros++; // Incrementa os erros
         document.getElementById('correto').textContent = 'Resposta certa: ' + respostaCorreta;
         document.getElementById('correto').style.backgroundColor = '#ff1919';
     }
@@ -102,6 +102,8 @@ function iniciarTimer() {
 function resetarJogo() {
     pontuacao = 0;
     document.getElementById("pontuacao").textContent = "Pontuação: " + pontuacao;
+    document.getElementById("correto").textContent = ''; // Limpa mensagem de erro
+    document.getElementById("correto").style.backgroundColor = ''; // Limpa cor de erro
     iniciarJogo(option === '1' ? 2 : 3);
 }
 
